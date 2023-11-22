@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar pacientes</title>
+</head>
+<body>
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form}}
+        <input type="date" name="date_of_birth">
+        <select name="medicos">
+            {% for medic in medics%}
+                <option value={{medic.id}}>{{medic.Nombre}} {{medic.Apellidos}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Ingresar datos">
+    </form>
+</body>
+</html>

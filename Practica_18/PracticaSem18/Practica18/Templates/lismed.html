@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de medicos</title>
+</head>
+<body>
+    <h1>Lista de medicos registrados</h1>
+    <a href="{% url 'add_med'%}"><Button>Agregar Medico</Button></a>
+    <table border="1mm">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for medico in lismed %}
+                <tr>
+                    <td>{{medico.Nombre}}</td>
+                    <td>{{medico.Apellidos}}</td>
+                    <td>{{medico.Especialidad}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

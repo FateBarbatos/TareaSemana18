@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de pacientes</title>
+</head>
+<body>
+    <h1>Lista de pacientes registrados</h1>
+    <a href="{%url 'ag_pacientes'%}"><button>Agregar pacientes</button></a>
+    <table border="1mm">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Fecha de nacimiento</th>
+                <th>Sexo</th>
+                <th>Altura</th>
+                <th>Nombre del medico</th>
+                <th>Apellidos del medico</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pac in lispad %}
+                <tr>
+                    <th>{{pac.Nombre}}</th>
+                    <th>{{pac.Apellidos}}</th>
+                    <th>{{pac.fecha_nacimiento}}</th>
+                    <th>{{pac.sexo}}</th>
+                    <th>{{pac.altura}}</th>
+                    <th>{{pac.medico_id.Nombre}}</th>
+                    <th>{{pac.medico_id.Apellidos}}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
